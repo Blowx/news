@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="container">
     <form method="post" action="{{asset('home')}}">
         {{csrf_field()}}
         <fieldset class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
@@ -23,4 +24,5 @@
         </fieldset>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    </div>
 @endsection
