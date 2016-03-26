@@ -31,11 +31,13 @@ class HomeController extends Controller
         return view('db.form');
     }
 
-    public function postIndex(NewsRequest $r)
+    public function postIndex(NewsRequest $request)
     {
-        $r['user_id']=Auth::user()->id;
-        Note::create($r->all());
-        return view('db.form');
+        $request['user_id']=Auth::user()->id;
+        /*Note::create($request->all());
+        return view('db.form');*/ // вариант с моделькой
+        DB::table('news')->insert($request->except(['_token']));
+        return redirect()->back(); // вариант без моделей
     }
 
 
