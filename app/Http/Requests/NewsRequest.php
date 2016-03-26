@@ -25,9 +25,9 @@ class NewsRequest extends Request
     public function rules()
     {
         return [
-            'title' => 'required',
-            'shortdesc' => 'required',
-            'desc' => 'required',
+            'title' => 'required|min:1|max:40',
+            'shortdesc' => 'required|min:1|max:100',
+            'desc' => 'required|min:1|max:500',
         ];
     }
 }

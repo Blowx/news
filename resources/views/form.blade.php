@@ -2,16 +2,11 @@
 
 @section('content')
     <div class="container">
-    <form method="post" action="{{asset('home')}}">
+    <form method="post" action="/">
         {{csrf_field()}}
-        <fieldset class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+        <fieldset class="form-group">
             <label for="exampleInputEmail1">Title</label>
             <input type="text" class="form-control" name="title">
-            @if ($errors->has('title'))
-                <span class="help-block">
-                                        <strong>{{ $errors->first('title') }}</strong>
-                                    </span>
-            @endif
         </fieldset>
 
         <fieldset class="form-group">

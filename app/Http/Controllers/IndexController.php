@@ -10,7 +10,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return View('post.index');
+        return view('post.index');
     }
 
 

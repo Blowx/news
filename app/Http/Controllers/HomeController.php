@@ -10,11 +10,7 @@ use Auth;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -23,14 +19,21 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('home');
+        return view('index');
+    }
+
+    public function form()
+    {
+        return view('form');
     }
 
     public function postIndex(NewsRequest $r)
     {
-        //print_r($_POST);
+        //dd($r->input('title'));
         $r['user_id']=Auth::user()->id;
         Note::create($r->all());
-        return view('home');
+        return view('form');
     }
+
+
 }

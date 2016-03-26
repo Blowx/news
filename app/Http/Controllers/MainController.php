@@ -19,7 +19,7 @@ class MainController extends Controller
 
     public function main()
     {
-        return View('hello')->withNames($this->names);
+        return View('hello/hello')->withNames($this->names);
     }
 
 }
