@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @extends('temp.app')
+=======
+@extends('app')
+>>>>>>> 0830bca51db84c06c0824c696e9ccffc87f5186b
 
 @section('content')
 123
