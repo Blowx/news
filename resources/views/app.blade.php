@@ -34,7 +34,7 @@
                 <div class="panel-heading">
 
                     <div class="panel-body">
-                        @yield('content')
+                        @yield('test')
                     </div>
                 </div>
             </div>

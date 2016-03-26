@@ -2,7 +2,7 @@
 /*Route::get('/{name}', ['uses' => 'TestController@index', 'as' => 'test.index']);*/
 //Route::get('/', ['uses' => 'MainController@main', 'as' => 'main.index']);
 //Route::get('/', ['uses'=> 'IndexController@index', 'as' => 'main.index']); //
-//Route::get('/db', ['uses' =>'DbController@index']);
+Route::get('/db', ['uses' =>'DbController@index']);
 
 
 

@@ -11,6 +11,9 @@ class DbController extends Controller
 {
     public function index()
     {
-        $db = DB::table('news')->insert('');
+        $results = \DB::select('select * from news');
+        //dd($results);
+
+        return View('db.index', compact('results'));
     }
 }

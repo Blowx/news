@@ -29,7 +29,6 @@ class HomeController extends Controller
 
     public function postIndex(NewsRequest $r)
     {
-        //dd($r->input('title'));
         $r['user_id']=Auth::user()->id;
         Note::create($r->all());
         return view('form');
