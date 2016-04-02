@@ -11,6 +11,7 @@ use Auth;
 
 class HomeController extends Controller
 {
+    const PER_PAGE = 10;
 
     public function __construct()
     {
@@ -20,7 +21,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        $results = DB::table('news')->get();
+        //$results = DB::table('news')->get();
+        $results = Note::all();
         //dd($results);
 
         return view('db.index', compact('results'));
@@ -34,10 +36,10 @@ class HomeController extends Controller
     public function postIndex(NewsRequest $request)
     {
         $request['user_id']=Auth::user()->id;
-        /*Note::create($request->all());
-        return view('db.form');*/ // вариант с моделькой
-        DB::table('news')->insert($request->except(['_token']));
-        return redirect()->back(); // вариант без моделей
+        Note::create($request->all());
+        return view('db.form'); // ??????? ? ?????????
+        /*DB::table('news')->insert($request->except(['_token']));
+        return redirect()->back();*/ // ??????? ??? ???????
     }
 
 

@@ -9,6 +9,7 @@
 
 
 
+
 /*Route::get('/{name}', ['uses' => 'TestController@index', 'as' => 'test.index']);
 
 Route::get('/', ['uses' => 'MainController@main', 'as' => 'main.index']);*/
@@ -37,6 +38,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/', 'HomeController@index');
     Route::get('/form', 'HomeController@form');
+    Route::get('/article{id}', 'ArticleCOntroller@index');
+
 });
 
 Route::group(['middleware' => ['web', 'auth']], function(){

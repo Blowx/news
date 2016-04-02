@@ -24,7 +24,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        //
+        $router->bind('note', function ($param){
+            return \App\Note::whereId($param)->first();
+        });
 
         parent::boot($router);
     }

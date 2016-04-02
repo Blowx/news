@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    {{--<div class="container">
     <table class="table">
         <thead>
         <tr>
@@ -22,6 +22,21 @@
         @endforeach
         </tbody>
     </table>
-    </div>
+    </div>--}}
+
+<div class="container" style="text-align: center;">
+
+    @foreach($results as $res)
+        <h1><a href="article{{$res->id}}">{{$res->title}}</a></h1>
+        <h2>{{$res->desc}}</h2>
+        <br>
+        <hr>
+
+    @endforeach
+
+</div>
+
+
+
 
 @stop
