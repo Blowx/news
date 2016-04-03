@@ -41,6 +41,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/article/{id}', ['uses' => 'ArticleController@index']);
     Route::get('{article}/edit', ['uses' => 'ArticleController@edit', 'as' => 'article.edit']);
     Route::put('{article}/update', ['uses' => 'ArticleController@update', 'as' => 'article.update']);
+    Route::get('{article}/destroy', ['uses' => 'ArticleController@destroy', 'as' => 'article.destroy']);
 
 });
 

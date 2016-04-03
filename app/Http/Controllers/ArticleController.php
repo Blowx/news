@@ -26,4 +26,12 @@ class ArticleController extends Controller
 
         return redirect()->back();
     }
+
+    public function destroy(Note $article)
+    {
+        //dd($article);
+        $article->delete();
+
+        return redirect('/');
+    }
 }
