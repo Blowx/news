@@ -36,9 +36,11 @@ Route::get('/', ['uses' => 'MainController@main', 'as' => 'main.index']);*/
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/', 'HomeController@index');
-    Route::get('/form', 'HomeController@form');
-    Route::get('/article{id}', 'ArticleCOntroller@index');
+    Route::get('/', ['uses' => 'HomeController@index']);
+    Route::get('/form', ['uses' => 'HomeController@form']);
+    Route::get('/article/{id}', ['uses' => 'ArticleController@index']);
+    Route::get('{article}/edit', ['uses' => 'ArticleController@edit', 'as' => 'article.edit']);
+    Route::put('{article}/update', ['uses' => 'ArticleController@update', 'as' => 'article.update']);
 
 });
 
